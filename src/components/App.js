@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
+import logo from './icons/DiceLogo.svg';
 import './App.css';
 import Histogram from './histogram/Histogram.js';
 
