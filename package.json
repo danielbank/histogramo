@@ -9,6 +9,7 @@
   "dependencies": {
     "echarts": "^4.0.4",
     "echarts-for-react": "^2.0.8",
+    "gh-pages": "^1.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
