@@ -2,7 +2,7 @@
   "name": "histogramo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://danielbank.github.io/histogramo/",
+  "homepage": ".",
   "devDependencies": {
     "react-scripts": "1.1.4"
   },
