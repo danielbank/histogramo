@@ -206,7 +206,7 @@ class Form extends Component {
             active={special === 'black'}
             />
         </StyledRow>
-        {red && yellow && special &&
+        {submittable &&
           <StyledRow>
           <Button
             icon={(
