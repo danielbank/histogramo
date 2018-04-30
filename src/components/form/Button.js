@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   border-radius: 0.3rem;
   border: 3px solid ${props => props.active ? '#C23631' : '#222'};
-  background-color: #fcfcfc;
+  background-color: ${props => props.active ? '#C09AA1' : '#fcfcfc'};
   color: #222;
 
   &:hover {
@@ -38,9 +38,9 @@ const StyledButton = styled.button`
 
 class Button extends Component {
   static propTypes = {
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.object.isRequired,
     active: PropTypes.bool,
-    onClick: PropTypes.func,
+    onClick: PropTypes.func.isRequired,
   };
 
   render() {
