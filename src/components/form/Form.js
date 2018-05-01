@@ -19,6 +19,7 @@ const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 const initialState = {
@@ -48,22 +49,22 @@ class Form extends Component {
   getRed = () => {
     switch (this.state.red) {
       case 1: {
-        return (<FillOne color={diceRed} size="4rem" />);
+        return (<FillOne color={diceRed} size="20%" />);
       }
       case 2: {
-        return (<FillTwo color={diceRed} size="4rem" />);
+        return (<FillTwo color={diceRed} size="20%" />);
       }
       case 3: {
-        return (<FillThree color={diceRed} size="4rem" />);
+        return (<FillThree color={diceRed} size="20%" />);
       }
       case 4: {
-        return (<FillFour color={diceRed} size="4rem" />);
+        return (<FillFour color={diceRed} size="20%" />);
       }
       case 5: {
-        return (<FillFive color={diceRed} size="4rem" />);
+        return (<FillFive color={diceRed} size="20%" />);
       }
       case 6: {
-        return (<FillSix color={diceRed} size="4rem" />);
+        return (<FillSix color={diceRed} size="20%" />);
       }
       default: return null;
     }
@@ -72,22 +73,22 @@ class Form extends Component {
   getYellow = () => {
     switch (this.state.yellow) {
       case 1: {
-        return (<FillOne color={diceYellow} size="4rem" />);
+        return (<FillOne color={diceYellow} size="20%" />);
       }
       case 2: {
-        return (<FillTwo color={diceYellow} size="4rem" />);
+        return (<FillTwo color={diceYellow} size="20%" />);
       }
       case 3: {
-        return (<FillThree color={diceYellow} size="4rem" />);
+        return (<FillThree color={diceYellow} size="20%" />);
       }
       case 4: {
-        return (<FillFour color={diceYellow} size="4rem" />);
+        return (<FillFour color={diceYellow} size="20%" />);
       }
       case 5: {
-        return (<FillFive color={diceYellow} size="4rem" />);
+        return (<FillFive color={diceYellow} size="20%" />);
       }
       case 6: {
-        return (<FillSix color={diceYellow} size="4rem" />);
+        return (<FillSix color={diceYellow} size="20%" />);
       }
       default: return null;
     }
@@ -96,16 +97,16 @@ class Form extends Component {
   getSpecial = () => {
     switch (this.state.special) {
       case 'green': {
-        return (<FillRect color={scientificGreen} size="4rem" />);
+        return (<FillRect color={scientificGreen} size="20%" />);
       }
       case 'yellow': {
-        return (<FillRect color={mercantileYellow} size="4rem" />);
+        return (<FillRect color={mercantileYellow} size="20%" />);
       }
       case 'blue': {
-        return (<FillRect color={politicalBlue} size="4rem" />);
+        return (<FillRect color={politicalBlue} size="20%" />);
       }
       case 'black': {
-        return (<FillRect color={pirateBlack} size="4rem" />);
+        return (<FillRect color={pirateBlack} size="20%" />);
       }
       default: return null;
     }
@@ -122,88 +123,104 @@ class Form extends Component {
       <StyledForm>
         <StyledRow>
           <Button
-            icon={<FillOne color={diceRed} size="4rem" />}
+            icon={<FillOne color={diceRed} />}
             onClick={() => this.setRed(1)}
             active={red === 1}
+            size="20%"
             />
           <Button
-            icon={<FillTwo color={diceRed} size="4rem" />}
+            icon={<FillTwo color={diceRed} />}
             onClick={() => this.setRed(2)}
             active={red === 2}
+            size="20%"
             />
           <Button
-            icon={<FillThree color={diceRed} size="4rem" />}
+            icon={<FillThree color={diceRed} />}
             onClick={() => this.setRed(3)}
             active={red === 3}
+            size="20%"
             />
           <Button
-            icon={<FillFour color={diceRed} size="4rem" />}
+            icon={<FillFour color={diceRed} />}
             onClick={() => this.setRed(4)}
             active={red === 4}
+            size="20%"
             />
           <Button
-            icon={<FillFive color={diceRed} size="4rem" />}
+            icon={<FillFive color={diceRed} />}
             onClick={() => this.setRed(5)}
             active={red === 5}
+            size="20%"
             />
           <Button
-            icon={<FillSix color={diceRed} size="4rem" />}
+            icon={<FillSix color={diceRed} />}
             onClick={() => this.setRed(6)}
             active={red === 6}
+            size="20%"
             />
         </StyledRow>
         <StyledRow>
           <Button
-            icon={<FillOne color={diceYellow} size="4rem" />}
+            icon={<FillOne color={diceYellow} />}
             onClick={() => this.setYellow(1)}
             active={yellow === 1}
+            size="20%"
             />
           <Button
-            icon={<FillTwo color={diceYellow} size="4rem" />}
+            icon={<FillTwo color={diceYellow} />}
             onClick={() => this.setYellow(2)}
             active={yellow === 2}
+            size="20%"
             />
           <Button
-            icon={<FillThree color={diceYellow} size="4rem" />}
+            icon={<FillThree color={diceYellow} />}
             onClick={() => this.setYellow(3)}
             active={yellow === 3}
+            size="20%"
             />
           <Button
-            icon={<FillFour color={diceYellow} size="4rem" />}
+            icon={<FillFour color={diceYellow} />}
             onClick={() => this.setYellow(4)}
             active={yellow === 4}
+            size="20%"
             />
           <Button
-            icon={<FillFive color={diceYellow} size="4rem" />}
+            icon={<FillFive color={diceYellow} />}
             onClick={() => this.setYellow(5)}
             active={yellow === 5}
+            size="20%"
             />
           <Button
-            icon={<FillSix color={diceYellow} size="4rem" />}
+            icon={<FillSix color={diceYellow} />}
             onClick={() => this.setYellow(6)}
             active={yellow === 6}
+            size="20%"
             />
         </StyledRow>
         <StyledRow>
           <Button
-            icon={<FillRect color={scientificGreen} size="4rem" />}
+            icon={<FillRect color={scientificGreen} />}
             onClick={() => this.setSpecial('green')}
             active={special === 'green'}
+            size="20%"
             />
           <Button
-            icon={<FillRect color={mercantileYellow} size="4rem" />}
+            icon={<FillRect color={mercantileYellow} />}
             onClick={() => this.setSpecial('yellow')}
             active={special === 'yellow'}
+            size="20%"
             />
           <Button
-            icon={<FillRect color={politicalBlue} size="4rem" />}
+            icon={<FillRect color={politicalBlue} />}
             onClick={() => this.setSpecial('blue')}
             active={special === 'blue'}
+            size="20%"
             />
           <Button
-            icon={<FillRect color={pirateBlack} size="4rem" />}
+            icon={<FillRect color={pirateBlack} />}
             onClick={() => this.setSpecial('black')}
             active={special === 'black'}
+            size="20%"
             />
         </StyledRow>
         {submittable &&
