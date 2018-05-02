@@ -39,16 +39,18 @@ const StyledButton = styled.button`
 class Button extends Component {
   static propTypes = {
     icon: PropTypes.object.isRequired,
-    active: PropTypes.bool,
     onClick: PropTypes.func.isRequired,
+    size: PropTypes.string.isRequired,
+    active: PropTypes.bool,
   };
 
   render() {
-    const { icon, active, onClick } = this.props;
+    const { icon, onClick, size, active } = this.props;
     return (
       <StyledButton
-        active={active}
         type="button"
+        size={size}
+        active={active}
           onClick={(e) => onClick ? onClick(e) : null}
         >
         {icon}
