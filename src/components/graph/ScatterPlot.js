@@ -48,8 +48,8 @@ class ScatterPlot extends Component {
       tooltip: {
         formatter: (params) => {
           const data = params.data || [0, 0];
-          console.log(data);
-          return `${data['value'][0].toFixed(2)}, ${data['value'][1].toFixed(2)}`;
+          const colorText = data['metacolor'][0].toUpperCase().concat(data['metacolor'].slice(1));
+          return `${colorText} ${data['value'][1].toFixed(0)}`;
         },
       },
       grid: {
