@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Button from './Button.js';
-import FillOne from '../icons/FillOne.js';
-import FillTwo from '../icons/FillTwo.js';
-import FillThree from '../icons/FillThree.js';
-import FillFour from '../icons/FillFour.js';
-import FillFive from '../icons/FillFive.js';
-import FillSix from '../icons/FillSix.js';
-import FillRect from '../icons/FillRect.js';
+import FillOne from '../icon/FillOne.js';
+import FillTwo from '../icon/FillTwo.js';
+import FillThree from '../icon/FillThree.js';
+import FillFour from '../icon/FillFour.js';
+import FillFive from '../icon/FillFive.js';
+import FillSix from '../icon/FillSix.js';
+import FillRect from '../icon/FillRect.js';
 
 const StyledForm = styled.div`
   display: flex;

@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import ReactEcharts from 'echarts-for-react';
 
 class Histogram extends Component {
-  getOption = (data, xAxis) => ({
-    tooltip: {},
+  getOption = data => ({
     xAxis: {
-      data: xAxis
+      data: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
     },
     yAxis: {},
     series: [{
@@ -16,10 +15,10 @@ class Histogram extends Component {
   });
 
   render() {
-    const { data, xAxis } = this.props;
+    const { data } = this.props;
     return (
       <ReactEcharts
-        option={this.getOption(data, xAxis)}
+        option={this.getOption(data)}
         />
     );
   }

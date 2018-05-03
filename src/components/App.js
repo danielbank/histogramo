@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Form from './form/Form.js';
-import Histogram from './histogram/Histogram.js';
+import Histogram from './graph/Histogram.js';
 
 class App extends Component {
   state = {
@@ -77,10 +77,7 @@ class App extends Component {
             <Form submitRoll={this.submitRoll} />
           </div>
           <div className="App-content">
-            <Histogram
-              xAxis={["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
-              data={this.getRollData()}
-            />
+            <Histogram data={this.getRollData()} />
           </div>
         </div>
       </div>
