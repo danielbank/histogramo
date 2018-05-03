@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Form from './form/Form.js';
 import Histogram from './graph/Histogram.js';
+import ScatterPlot from './graph/ScatterPlot.js';
 
 class App extends Component {
   state = {
@@ -28,43 +29,10 @@ class App extends Component {
     return rollData;
   };
 
-  // getRedsData = () => {
-  //   const { reds } = this.state;
-  //   const redsData = [0, 0, 0, 0, 0, 0];
-  //   reds.map(red => {
-  //     redsData[red - 1] = redsData[red - 1] + 1;
-  //   });
-  //   return redsData;
-  // };
-  //
-  // getSpecialData = () => {
-  //   const { specials } = this.state;
-  //   const specialData = [0, 0, 0, 0, 0, 0];
-  //   specials.map(special => {
-  //     switch (special) {
-  //       case 'green': {
-  //         specialData['green'] = specialData['green'] + 1;
-  //         return specialData['green'] + 1;
-  //       }
-  //       case 'yellow': {
-  //         specialData['yellow'] = specialData['yellow'] + 1;
-  //         return specialData['yellow'] + 1;
-  //       }
-  //       case 'blue': {
-  //         specialData['blue'] = specialData['blue'] + 1;
-  //         return specialData['blue'] + 1;
-  //       }
-  //       case 'black': {
-  //         specialData['black'] = specialData['black'] + 1;
-  //         return specialData['black'] + 1;
-  //       }
-  //       default: {
-  //         return null;
-  //       }
-  //     }
-  //   });
-  //   return specialData;
-  // };
+  getSpecialData = () => {
+    const { reds, specials } = this.state;
+    return reds.map((value, i) => [i, value, specials[i]]);
+  };
 
   render() {
     return (
@@ -78,6 +46,7 @@ class App extends Component {
           </div>
           <div className="App-content">
             <Histogram data={this.getRollData()} />
+            <ScatterPlot data={this.getSpecialData()} />
           </div>
         </div>
       </div>
