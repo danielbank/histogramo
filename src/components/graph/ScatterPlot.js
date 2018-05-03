@@ -4,19 +4,19 @@ import ReactEcharts from 'echarts-for-react';
 class ScatterPlot extends Component {
   getOption = (data) => {
     const numGreen = data.reduce((acc, cur) => {
-      if (cur[2] === 'green') return acc += 1;
+      if (cur.metacolor === 'green') return acc += 1;
       return acc;
     }, 0);
     const numYellow = data.reduce((acc, cur) => {
-      if (cur[2] === 'yellow') return acc += 1;
+      if (cur.metacolor === 'yellow') return acc += 1;
       return acc;
     }, 0);
     const numBlue = data.reduce((acc, cur) => {
-      if (cur[2] === 'blue') return acc += 1;
+      if (cur.metacolor === 'blue') return acc += 1;
       return acc;
     }, 0);
     const numBlack = data.reduce((acc, cur) => {
-      if (cur[2] === 'black') return acc += 1;
+      if (cur.metacolor === 'black') return acc += 1;
       return acc;
     }, 0);
     return {
@@ -49,7 +49,7 @@ class ScatterPlot extends Component {
         formatter: (params) => {
           const data = params.data || [0, 0];
           console.log(data);
-          return `${data[0].toFixed(2)}, ${data[1].toFixed(2)}`;
+          return `${data['value'][0].toFixed(2)}, ${data['value'][1].toFixed(2)}`;
         },
       },
       grid: {
@@ -74,7 +74,7 @@ class ScatterPlot extends Component {
         {
           id: 'Special',
           type: 'line',
-          smooth: true,
+          smooth: false,
           symbolSize: 10,
           data: data,
         },

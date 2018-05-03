@@ -20,6 +20,26 @@ class App extends Component {
     });
   }
 
+  getRGB = (color) => {
+    switch (color) {
+      case 'green': {
+        return '#779348';
+      }
+      case 'yellow': {
+        return '#F6C55E';
+      }
+      case 'blue': {
+        return '#0072BB';
+      }
+      case 'black': {
+        return '#222';
+      }
+      default: {
+        return '#FFF'
+      }
+    }
+  }
+
   getRollData = () => {
     const { rolls } = this.state;
     const rollData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -31,7 +51,15 @@ class App extends Component {
 
   getSpecialData = () => {
     const { reds, specials } = this.state;
-    return reds.map((value, i) => [i, value, specials[i]]);
+    return reds.map((value, i) => {
+      return {
+        value: [i, value],
+        itemStyle: {
+          color: this.getRGB(specials[i]),
+        },
+        metacolor: specials[i],
+      };
+    });
   };
 
   render() {
