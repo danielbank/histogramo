@@ -3,6 +3,9 @@ import ReactEcharts from 'echarts-for-react';
 
 class Histogram extends Component {
   getOption = data => ({
+    tooltip: {
+      formatter: (params) => params.data,
+    },
     xAxis: {
       data: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
     },

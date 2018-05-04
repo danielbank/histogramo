@@ -1,2 +1,0 @@
-# histogramo
-Histograms on demando
