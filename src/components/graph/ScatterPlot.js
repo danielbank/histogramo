@@ -75,7 +75,7 @@ class ScatterPlot extends Component {
           id: 'Special',
           type: 'line',
           smooth: false,
-          symbolSize: 10,
+          symbolSize: 5,
           data: data,
         },
       ],

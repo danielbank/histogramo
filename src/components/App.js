@@ -32,10 +32,10 @@ class App extends Component {
         return '#0072BB';
       }
       case 'black': {
-        return '#222';
+        return '#ccc';
       }
       default: {
-        return '#FFF'
+        return '#222'
       }
     }
   }
@@ -55,6 +55,7 @@ class App extends Component {
       return {
         value: [i, value],
         itemStyle: {
+          borderWidth: 10,
           color: this.getRGB(specials[i]),
         },
         metacolor: specials[i],
