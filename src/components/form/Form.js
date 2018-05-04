@@ -8,6 +8,7 @@ import FillFour from '../icon/FillFour.js';
 import FillFive from '../icon/FillFive.js';
 import FillSix from '../icon/FillSix.js';
 import FillRect from '../icon/FillRect.js';
+import Undo from '../icon/Undo.js';
 
 const StyledForm = styled.div`
   display: flex;
@@ -59,6 +60,10 @@ class Form extends Component {
   submitRoll = () => {
     this.props.submitRoll(this.state.red, this.state.yellow, this.state.special);
     this.setState(initialState);
+  }
+  undoLastSubmit = () => {
+    const lastData = this.props.undoLastSubmit();
+    this.setState(lastData);
   }
 
   getRed = () => {
@@ -128,6 +133,7 @@ class Form extends Component {
   }
 
   render() {
+    const { undoable } = this.props;
     const { red, yellow, special } = this.state;
     const submittable = red && yellow && special;
     const redDice = this.getRed();
@@ -252,6 +258,16 @@ class Form extends Component {
               onClick={() => this.submitRoll()}
               />
           </StyledSubmitRow>
+        }
+        {undoable ?
+          <StyledSubmitRow>
+            <Button
+              icon={<Undo color={pirateBlack} size="100%"/>}
+              size="10%"
+              onClick={() => this.undoLastSubmit()}
+              />
+            </StyledSubmitRow>
+            : null
         }
       </StyledForm>
     );

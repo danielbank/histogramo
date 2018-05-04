@@ -20,6 +20,25 @@ class App extends Component {
     });
   }
 
+  undoLastSubmit = () => {
+    const { rolls, reds, specials } = this.state;
+    if (!rolls.length) return false;
+    const lastRoll = rolls[rolls.length - 1];
+    const lastRed = reds[reds.length - 1];
+    const lastYellow = lastRoll - lastRed;
+    const lastSpecial = specials[specials.length - 1];
+    this.setState({
+      rolls: rolls.slice(0, rolls.length - 1),
+      reds: reds.slice(0, reds.length - 1),
+      specials: specials.slice(0, specials.length - 1),
+    });
+    return {
+      red: lastRed,
+      yellow: lastYellow,
+      special: lastSpecial,
+    }
+  }
+
   getRGB = (color) => {
     switch (color) {
       case 'green': {
@@ -71,7 +90,11 @@ class App extends Component {
         </header>
         <div className="App-body">
           <div className="App-content">
-            <Form submitRoll={this.submitRoll} />
+            <Form
+              submitRoll={this.submitRoll}
+              undoLastSubmit={this.undoLastSubmit}
+              undoable={this.state.rolls.length}
+              />
           </div>
           <div className="App-content">
             <Histogram data={this.getRollData()} />
