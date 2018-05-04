@@ -38,6 +38,13 @@ const StyledSubmitRow = styled.div`
   justify-content: center;
 `;
 
+const StyledUndoRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15%;
+`;
+
 const initialState = {
   red: null,
   yellow: null,
@@ -260,13 +267,13 @@ class Form extends Component {
           </StyledSubmitRow>
         }
         {undoable ?
-          <StyledSubmitRow>
+          <StyledUndoRow>
             <Button
               icon={<Undo color={pirateBlack} size="100%"/>}
               size="10%"
               onClick={() => this.undoLastSubmit()}
               />
-            </StyledSubmitRow>
+            </StyledUndoRow>
             : null
         }
       </StyledForm>
