@@ -151,44 +151,6 @@ class Form extends Component {
       <StyledForm>
         <StyledRow>
           <Button
-            icon={<FillOne color={diceRed} size="100%" />}
-            onClick={() => this.setRed(1)}
-            active={red === 1}
-            size="10%"
-            />
-          <Button
-            icon={<FillTwo color={diceRed} size="100%" />}
-            onClick={() => this.setRed(2)}
-            active={red === 2}
-            size="10%"
-            />
-          <Button
-            icon={<FillThree color={diceRed} size="100%" />}
-            onClick={() => this.setRed(3)}
-            active={red === 3}
-            size="10%"
-            />
-          <Button
-            icon={<FillFour color={diceRed} size="100%" />}
-            onClick={() => this.setRed(4)}
-            active={red === 4}
-            size="10%"
-            />
-          <Button
-            icon={<FillFive color={diceRed} size="100%" />}
-            onClick={() => this.setRed(5)}
-            active={red === 5}
-            size="10%"
-            />
-          <Button
-            icon={<FillSix color={diceRed} size="100%" />}
-            onClick={() => this.setRed(6)}
-            active={red === 6}
-            size="10%"
-            />
-        </StyledRow>
-        <StyledRow>
-          <Button
             icon={<FillOne color={diceYellow} size="100%" />}
             onClick={() => this.setYellow(1)}
             active={yellow === 1}
@@ -222,6 +184,44 @@ class Form extends Component {
             icon={<FillSix color={diceYellow} size="100%" />}
             onClick={() => this.setYellow(6)}
             active={yellow === 6}
+            size="10%"
+            />
+        </StyledRow>
+        <StyledRow>
+          <Button
+            icon={<FillOne color={diceRed} size="100%" />}
+            onClick={() => this.setRed(1)}
+            active={red === 1}
+            size="10%"
+            />
+          <Button
+            icon={<FillTwo color={diceRed} size="100%" />}
+            onClick={() => this.setRed(2)}
+            active={red === 2}
+            size="10%"
+            />
+          <Button
+            icon={<FillThree color={diceRed} size="100%" />}
+            onClick={() => this.setRed(3)}
+            active={red === 3}
+            size="10%"
+            />
+          <Button
+            icon={<FillFour color={diceRed} size="100%" />}
+            onClick={() => this.setRed(4)}
+            active={red === 4}
+            size="10%"
+            />
+          <Button
+            icon={<FillFive color={diceRed} size="100%" />}
+            onClick={() => this.setRed(5)}
+            active={red === 5}
+            size="10%"
+            />
+          <Button
+            icon={<FillSix color={diceRed} size="100%" />}
+            onClick={() => this.setRed(6)}
+            active={red === 6}
             size="10%"
             />
         </StyledRow>
