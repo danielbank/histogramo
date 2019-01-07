@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
 import Form from './form/Form.js';
 import Histogram from './graph/Histogram.js';
 import ScatterPlot from './graph/ScatterPlot.js';
+import {
+  StyledApp,
+  StyledHeader,
+  StyledTitle,
+  StyledGitHubRibbon,
+  StyledBody,
+  StyledContent
+} from '../style';
 
 class App extends Component {
   state = {
@@ -84,31 +91,30 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Histogramo</h1>
+      <StyledApp>
+        <StyledHeader>
+          <StyledTitle>Histogramo</StyledTitle>
           <a href="https://github.com/danielbank/histogramo">
-            <img
-              className="Github-ribbon"
+            <StyledGitHubRibbon
               src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
               alt="Fork me on GitHub"
               />
           </a>
-        </header>
-        <div className="App-body">
-          <div className="App-content">
+        </StyledHeader>
+        <StyledBody>
+          <StyledContent>
             <Form
               submitRoll={this.submitRoll}
               undoLastSubmit={this.undoLastSubmit}
               undoable={this.state.rolls.length}
               />
-          </div>
-          <div className="App-content">
+          </StyledContent>
+          <StyledContent>
             <Histogram data={this.getRollData()} />
             <ScatterPlot data={this.getSpecialData()} />
-          </div>
-        </div>
-      </div>
+          </StyledContent>
+        </StyledBody>
+      </StyledApp>
     );
   }
 }

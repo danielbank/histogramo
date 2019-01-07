@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import Button from './Button.js';
 import FillOne from '../icon/FillOne.js';
 import FillTwo from '../icon/FillTwo.js';
@@ -9,41 +8,12 @@ import FillFive from '../icon/FillFive.js';
 import FillSix from '../icon/FillSix.js';
 import FillRect from '../icon/FillRect.js';
 import Undo from '../icon/Undo.js';
-
-const StyledForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-`;
-
-const StyledRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  button {
-    flex-basis: 10%;
-  }
-
-  @media (max-width: 1024px) {
-  button {
-    flex-basis: 20%;
-  }
-`;
-
-const StyledSubmitRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
-
-const StyledUndoRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 15%;
-`;
+import {
+  StyledForm,
+  StyledRow,
+  StyledSubmitRow,
+  StyledUndoRow,
+} from '../../style';
 
 const initialState = {
   red: null,
@@ -154,37 +124,37 @@ class Form extends Component {
             icon={<FillOne color={diceYellow} size="100%" />}
             onClick={() => this.setYellow(1)}
             active={yellow === 1}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillTwo color={diceYellow} size="100%" />}
             onClick={() => this.setYellow(2)}
             active={yellow === 2}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillThree color={diceYellow} size="100%" />}
             onClick={() => this.setYellow(3)}
             active={yellow === 3}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillFour color={diceYellow} size="100%" />}
             onClick={() => this.setYellow(4)}
             active={yellow === 4}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillFive color={diceYellow} size="100%" />}
             onClick={() => this.setYellow(5)}
             active={yellow === 5}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillSix color={diceYellow} size="100%" />}
             onClick={() => this.setYellow(6)}
             active={yellow === 6}
-            size="10%"
+            size="5em"
             />
         </StyledRow>
         <StyledRow>
@@ -192,37 +162,37 @@ class Form extends Component {
             icon={<FillOne color={diceRed} size="100%" />}
             onClick={() => this.setRed(1)}
             active={red === 1}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillTwo color={diceRed} size="100%" />}
             onClick={() => this.setRed(2)}
             active={red === 2}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillThree color={diceRed} size="100%" />}
             onClick={() => this.setRed(3)}
             active={red === 3}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillFour color={diceRed} size="100%" />}
             onClick={() => this.setRed(4)}
             active={red === 4}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillFive color={diceRed} size="100%" />}
             onClick={() => this.setRed(5)}
             active={red === 5}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillSix color={diceRed} size="100%" />}
             onClick={() => this.setRed(6)}
             active={red === 6}
-            size="10%"
+            size="5em"
             />
         </StyledRow>
         <StyledRow>
@@ -230,25 +200,25 @@ class Form extends Component {
             icon={<FillRect color={scientificGreen} size="100%" />}
             onClick={() => this.setSpecial('green')}
             active={special === 'green'}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillRect color={mercantileYellow} size="100%" />}
             onClick={() => this.setSpecial('yellow')}
             active={special === 'yellow'}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillRect color={politicalBlue} size="100%" />}
             onClick={() => this.setSpecial('blue')}
             active={special === 'blue'}
-            size="10%"
+            size="5em"
             />
           <Button
             icon={<FillRect color={pirateBlack} size="100%" />}
             onClick={() => this.setSpecial('black')}
             active={special === 'black'}
-            size="10%"
+            size="5em"
             />
         </StyledRow>
         {submittable &&
@@ -270,7 +240,7 @@ class Form extends Component {
           <StyledUndoRow>
             <Button
               icon={<Undo color={pirateBlack} size="100%"/>}
-              size="10%"
+              size="5em"
               onClick={() => this.undoLastSubmit()}
               />
             </StyledUndoRow>
