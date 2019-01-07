@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
-import './App.css';
 import Form from './form/Form.js';
 import Histogram from './graph/Histogram.js';
 import ScatterPlot from './graph/ScatterPlot.js';
+import {
+  colors,
+  StyledApp,
+  StyledHeader,
+  StyledTitle,
+  StyledGitHubRibbon,
+  StyledBody,
+  StyledLeftContent,
+  StyledRightContent
+} from '../style';
 
 class App extends Component {
   state = {
@@ -42,19 +51,19 @@ class App extends Component {
   getRGB = (color) => {
     switch (color) {
       case 'green': {
-        return '#779348';
+        return colors.scientificGreen;
       }
       case 'yellow': {
-        return '#F6C55E';
+        return colors.mercantileYellow;
       }
       case 'blue': {
-        return '#0072BB';
+        return colors.politicalBlue;
       }
       case 'black': {
-        return '#ccc';
+        return colors.beaurocraticGrey;
       }
       default: {
-        return '#222'
+        return colors.appBlack
       }
     }
   }
@@ -84,31 +93,30 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Histogramo</h1>
+      <StyledApp>
+        <StyledHeader>
+          <StyledTitle>Histogramo</StyledTitle>
           <a href="https://github.com/danielbank/histogramo">
-            <img
-              className="Github-ribbon"
+            <StyledGitHubRibbon
               src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
               alt="Fork me on GitHub"
               />
           </a>
-        </header>
-        <div className="App-body">
-          <div className="App-content">
+        </StyledHeader>
+        <StyledBody>
+          <StyledLeftContent>
             <Form
               submitRoll={this.submitRoll}
               undoLastSubmit={this.undoLastSubmit}
               undoable={this.state.rolls.length}
               />
-          </div>
-          <div className="App-content">
+          </StyledLeftContent>
+          <StyledRightContent>
             <Histogram data={this.getRollData()} />
             <ScatterPlot data={this.getSpecialData()} />
-          </div>
-        </div>
-      </div>
+          </StyledRightContent>
+        </StyledBody>
+      </StyledApp>
     );
   }
 }
