@@ -3,6 +3,7 @@ import Form from './form/Form.js';
 import Histogram from './graph/Histogram.js';
 import ScatterPlot from './graph/ScatterPlot.js';
 import {
+  colors,
   StyledApp,
   StyledHeader,
   StyledTitle,
@@ -49,19 +50,19 @@ class App extends Component {
   getRGB = (color) => {
     switch (color) {
       case 'green': {
-        return '#779348';
+        return colors.scientificGreen;
       }
       case 'yellow': {
-        return '#F6C55E';
+        return colors.mercantileYellow;
       }
       case 'blue': {
-        return '#0072BB';
+        return colors.politicalBlue;
       }
       case 'black': {
-        return '#ccc';
+        return colors.beaurocraticGrey;
       }
       default: {
-        return '#222'
+        return colors.appBlack
       }
     }
   }

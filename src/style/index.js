@@ -1,11 +1,22 @@
 import styled from 'styled-components';
 
+export const colors = {
+  appBlack: '#222',
+  diceRed: '#C23631',
+  diceYellow: '#fce655',
+  scientificGreen: '#779348',
+  mercantileYellow: '#F6C55E',
+  politicalBlue: '#0072BB',
+  pirateBlack: '#222',
+  beaurocraticGrey: '#ccc'
+}
+
 export const StyledApp = styled.div`
   text-align: center;
 `;
 
 export const StyledHeader = styled.header`
-  background-color: #222;
+  background-color: ${colors.appBlack};
   color: white;
 `;
 
@@ -84,7 +95,7 @@ export const StyledButton = styled.button`
   border-radius: 0.3rem;
   border: 3px solid ${props => props.active ? '#C23631' : '#222'};
   background-color: ${props => props.active ? '#C09AA1' : '#fcfcfc'};
-  color: #222;
+  color: '#222';
 
   &:hover {
     opacity: 0.70;

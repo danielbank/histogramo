@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactEcharts from 'echarts-for-react';
+import { colors } from '../../style';
 
 class ScatterPlot extends Component {
   getOption = (data) => {
@@ -31,16 +32,16 @@ class ScatterPlot extends Component {
           ].join('\n'),
           rich: {
             green: {
-              color: '#779348',
+              color: colors.scientificGreen,
             },
             yellow: {
-              color: '#F6C55E',
+              color: colors.mercantileYellow,
             },
             blue: {
-              color: '#0072BB',
+              color: colors.politicalBlue,
             },
             black: {
-              color: '#ccc',
+              color: colors.beaurocraticGrey,
             },
           },
         },
