@@ -4,7 +4,6 @@
 
 .App-header {
   background-color: #222;
-  padding: 20px;
   color: white;
 }
 
@@ -21,4 +20,11 @@
 
 .App-content {
   width: 50%;
+}
+
+.Github-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
 }

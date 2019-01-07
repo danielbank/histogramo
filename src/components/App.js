@@ -86,7 +86,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Histogramo by <a href="https://github.com/danielbank">Daniel Bank</a></h1>
+          <h1 className="App-title">Histogramo</h1>
+          <a href="https://github.com/danielbank/histogramo">
+            <img
+              className="Github-ribbon"
+              src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
+              alt="Fork me on GitHub"
+              />
+          </a>
         </header>
         <div className="App-body">
           <div className="App-content">
