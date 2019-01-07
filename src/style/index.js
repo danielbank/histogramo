@@ -38,8 +38,12 @@ export const StyledBody = styled.div`
   flex-direction: row;
 `;
 
-export const StyledContent = styled.div`
-  width: 50%;
+export const StyledLeftContent = styled.div`
+  width: 60%;
+`;
+
+export const StyledRightContent = styled.div`
+  width: 40%;
 `;
 
 export const StyledForm = styled.div`
@@ -58,7 +62,7 @@ export const StyledRow = styled.div`
     flex-basis: 10%;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 640px) {
   button {
     flex-basis: 20%;
   }
@@ -74,7 +78,6 @@ export const StyledUndoRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 15%;
 `;
 
 export const StyledButton = styled.button`
@@ -82,20 +85,17 @@ export const StyledButton = styled.button`
   opacity: 1;
   cursor: pointer;
   display: flex;
-  min-height ${props => props.size};
-  min-width: ${props => props.size};
-  height ${props => props.size};
+  height: ${props => props.size};
   width: ${props => props.size};
-  padding: 0.33rem 0.66rem;
   margin: 1rem;
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 0.88rem;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  border-radius: 0.3rem;
+  border-radius: 8px;
   border: 3px solid ${props => props.active ? '#C23631' : '#222'};
   background-color: ${props => props.active ? '#C09AA1' : '#fcfcfc'};
-  color: '#222';
+  color: #222;
 
   &:hover {
     opacity: 0.70;

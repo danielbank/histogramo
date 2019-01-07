@@ -9,7 +9,8 @@ import {
   StyledTitle,
   StyledGitHubRibbon,
   StyledBody,
-  StyledContent
+  StyledLeftContent,
+  StyledRightContent
 } from '../style';
 
 class App extends Component {
@@ -103,17 +104,17 @@ class App extends Component {
           </a>
         </StyledHeader>
         <StyledBody>
-          <StyledContent>
+          <StyledLeftContent>
             <Form
               submitRoll={this.submitRoll}
               undoLastSubmit={this.undoLastSubmit}
               undoable={this.state.rolls.length}
               />
-          </StyledContent>
-          <StyledContent>
+          </StyledLeftContent>
+          <StyledRightContent>
             <Histogram data={this.getRollData()} />
             <ScatterPlot data={this.getSpecialData()} />
-          </StyledContent>
+          </StyledRightContent>
         </StyledBody>
       </StyledApp>
     );
