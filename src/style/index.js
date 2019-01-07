@@ -62,7 +62,7 @@ export const StyledRow = styled.div`
     flex-basis: 10%;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 1024px) {
   button {
     flex-basis: 20%;
   }
