@@ -256,8 +256,8 @@ class Form extends Component {
             <Button
               icon={(
                 <div>
-                  {redDice}
                   {yellowDice}
+                  {redDice}
                   {specialDice}
                 </div>
               )}
