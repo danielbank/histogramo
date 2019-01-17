@@ -7,15 +7,17 @@ class Button extends Component {
     icon: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired,
     size: PropTypes.string.isRequired,
+    maxSize: PropTypes.string,
     active: PropTypes.bool,
   };
 
   render() {
-    const { icon, onClick, size, active } = this.props;
+    const { icon, onClick, size, maxSize, active } = this.props;
     return (
       <StyledButton
         type="button"
         size={size}
+        maxSize={maxSize}
         active={active}
           onClick={(e) => onClick ? onClick(e) : null}
         >

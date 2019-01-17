@@ -32,18 +32,17 @@ export const StyledGitHubRibbon = styled.img`
 `;
 
 export const StyledBody = styled.div`
-  padding-left: 3rem;
   display: flex;
   justify-content: center;
   flex-direction: row;
 `;
 
 export const StyledLeftContent = styled.div`
-  width: 60%;
+  width: 50%;
 `;
 
 export const StyledRightContent = styled.div`
-  width: 40%;
+  width: 50%;
 `;
 
 export const StyledForm = styled.div`
@@ -87,6 +86,8 @@ export const StyledButton = styled.button`
   display: flex;
   height: ${props => props.size};
   width: ${props => props.size};
+  max-height: ${props => props.maxSize}
+  max-width: ${props => props.maxSize}
   margin: 1rem;
   font-size: 0.75rem;
   font-weight: 500;
