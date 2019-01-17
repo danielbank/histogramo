@@ -41,49 +41,26 @@ class Form extends Component {
     this.setState(lastData);
   }
 
-  getRed = () => {
-    switch (this.state.red) {
+  getDie = (color) => {
+    const dieColor = color === 'red' ? colors.diceRed : colors.diceYellow;
+    switch (this.state[color]) {
       case 1: {
-        return (<FillOne color={colors.diceRed} size="33%" />);
+        return (<FillOne color={dieColor} size="33%" />);
       }
       case 2: {
-        return (<FillTwo color={colors.diceRed} size="33%" />);
+        return (<FillTwo color={dieColor} size="33%" />);
       }
       case 3: {
-        return (<FillThree color={colors.diceRed} size="33%" />);
+        return (<FillThree color={dieColor} size="33%" />);
       }
       case 4: {
-        return (<FillFour color={colors.diceRed} size="33%" />);
+        return (<FillFour color={dieColor} size="33%" />);
       }
       case 5: {
-        return (<FillFive color={colors.diceRed} size="33%" />);
+        return (<FillFive color={dieColor} size="33%" />);
       }
       case 6: {
-        return (<FillSix color={colors.diceRed} size="33%" />);
-      }
-      default: return null;
-    }
-  }
-
-  getYellow = () => {
-    switch (this.state.yellow) {
-      case 1: {
-        return (<FillOne color={colors.diceYellow} size="33%" />);
-      }
-      case 2: {
-        return (<FillTwo color={colors.diceYellow} size="33%" />);
-      }
-      case 3: {
-        return (<FillThree color={colors.diceYellow} size="33%" />);
-      }
-      case 4: {
-        return (<FillFour color={colors.diceYellow} size="33%" />);
-      }
-      case 5: {
-        return (<FillFive color={colors.diceYellow} size="33%" />);
-      }
-      case 6: {
-        return (<FillSix color={colors.diceYellow} size="33%" />);
+        return (<FillSix color={dieColor} size="33%" />);
       }
       default: return null;
     }
@@ -111,8 +88,8 @@ class Form extends Component {
     const { undoable } = this.props;
     const { red, yellow, special } = this.state;
     const submittable = red && yellow && special;
-    const redDice = this.getRed();
-    const yellowDice = this.getYellow();
+    const redDice = this.getDie('red');
+    const yellowDice = this.getDie('yellow');
     const specialDice = this.getSpecial();
 
     return (
