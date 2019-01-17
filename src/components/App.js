@@ -22,17 +22,9 @@ class App extends Component {
     specials: [],
   };
 
-  onLeftClick = () => {
-    const newNum = clamp(this.state.leftPercent + 10, 70);
-    console.log(newNum);
-    this.setState({leftPercent: newNum});
-  }
+  onLeftClick = () => this.setState({leftPercent: clamp(this.state.leftPercent + 10, 70)});
 
-  onRightClick = () => {
-    const newNum = clamp(this.state.leftPercent - 10, 30, 70);
-    console.log(newNum);
-    this.setState({leftPercent: newNum});
-  }
+  onRightClick = () => this.setState({leftPercent: clamp(this.state.leftPercent - 10, 30, 70)});
 
   submitRoll = (red, yellow, special) => {
     const { rolls, reds, specials } = this.state;
