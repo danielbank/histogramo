@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from './form/Form.js';
 import Histogram from './graph/Histogram.js';
 import ScatterPlot from './graph/ScatterPlot.js';
+import { clamp } from 'lodash';
 import {
   colors,
   StyledApp,
@@ -15,10 +16,23 @@ import {
 
 class App extends Component {
   state = {
+    leftPercent: 50,
     rolls: [],
     reds: [],
     specials: [],
   };
+
+  onLeftClick = () => {
+    const newNum = clamp(this.state.leftPercent + 10, 70);
+    console.log(newNum);
+    this.setState({leftPercent: newNum});
+  }
+
+  onRightClick = () => {
+    const newNum = clamp(this.state.leftPercent - 10, 30, 70);
+    console.log(newNum);
+    this.setState({leftPercent: newNum});
+  }
 
   submitRoll = (red, yellow, special) => {
     const { rolls, reds, specials } = this.state;
@@ -104,14 +118,20 @@ class App extends Component {
           </a>
         </StyledHeader>
         <StyledBody>
-          <StyledLeftContent>
+          <StyledLeftContent
+            onClick={this.onLeftClick}
+            percentWidth={this.state.leftPercent}
+            >
             <Form
               submitRoll={this.submitRoll}
               undoLastSubmit={this.undoLastSubmit}
               undoable={this.state.rolls.length}
               />
           </StyledLeftContent>
-          <StyledRightContent>
+          <StyledRightContent
+            onClick={this.onRightClick}
+            percentWidth={100 - this.state.leftPercent}
+            >
             <Histogram data={this.getRollData()} />
             <ScatterPlot data={this.getSpecialData()} />
           </StyledRightContent>

@@ -38,11 +38,11 @@ export const StyledBody = styled.div`
 `;
 
 export const StyledLeftContent = styled.div`
-  width: 50%;
+  width: ${props => props.percentWidth}%;
 `;
 
 export const StyledRightContent = styled.div`
-  width: 50%;
+  width: ${props => props.percentWidth}%;
 `;
 
 export const StyledForm = styled.div`
