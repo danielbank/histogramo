@@ -20,17 +20,6 @@ export const StyledBody = styled.div`
   flex-direction: row;
 `;
 
-export const StyledGitHubRibbon = styled.img`
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-`;
-
 export const StyledLeftContent = styled.div`
   width: ${props => props.percentWidth}%;
   display: ${props => props.percentWidth < 30 ? 'none' : 'block'}
@@ -39,4 +28,7 @@ export const StyledLeftContent = styled.div`
 export const StyledRightContent = styled.div`
   width: ${props => props.percentWidth}%;
   display: ${props => props.percentWidth < 30 ? 'none' : 'block'}
+`;
+
+export const StyledFooter = styled.div`
 `;

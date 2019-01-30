@@ -10,10 +10,10 @@ import {
   colors,
   StyledApp,
   StyledHeader,
-  StyledGitHubRibbon,
   StyledBody,
   StyledLeftContent,
-  StyledRightContent
+  StyledRightContent,
+  StyledFooter
 } from '../style';
 
 class App extends Component {
@@ -117,12 +117,6 @@ class App extends Component {
             maxSize="5rem"
             disabled={this.state.leftPercent < 30}
             />
-          <a href="https://github.com/danielbank/histogramo">
-            <StyledGitHubRibbon
-              src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
-              alt="Fork me on GitHub"
-              />
-          </a>
         </StyledHeader>
         <StyledBody>
           <StyledLeftContent
@@ -141,6 +135,9 @@ class App extends Component {
             <ScatterPlot data={this.getSpecialData()} />
           </StyledRightContent>
         </StyledBody>
+        <StyledFooter>
+          <a href="https://github.com/danielbank/histogramo">GitHub</a>
+        </StyledFooter>
       </StyledApp>
     );
   }

@@ -4,9 +4,9 @@ import {
   StyledApp,
   StyledHeader,
   StyledBody,
-  StyledGitHubRibbon,
   StyledLeftContent,
-  StyledRightContent
+  StyledRightContent,
+  StyledFooter
 } from './AppStyle';
 
 import {
@@ -25,9 +25,9 @@ export {
   StyledApp,
   StyledHeader,
   StyledBody,
-  StyledGitHubRibbon,
   StyledLeftContent,
   StyledRightContent,
+  StyledFooter,
   StyledForm,
   StyledRow,
   StyledSubmitRow,
