@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import { clamp } from 'lodash';
 import Form from './form/Form.js';
 import Histogram from './graph/Histogram.js';
 import ScatterPlot from './graph/ScatterPlot.js';
-import { clamp } from 'lodash';
+import Button from './form/Button.js';
+import Graph from './icon/Graph.js';
+import FillSix from './icon/FillSix.js';
 import {
   colors,
   StyledApp,
   StyledHeader,
-  StyledTitle,
   StyledGitHubRibbon,
   StyledBody,
   StyledLeftContent,
@@ -22,9 +24,9 @@ class App extends Component {
     specials: [],
   };
 
-  onLeftClick = () => this.setState({leftPercent: clamp(this.state.leftPercent + 10, 70)});
+  onLeftClick = () => this.setState({leftPercent: clamp(this.state.leftPercent + 10, 80)});
 
-  onRightClick = () => this.setState({leftPercent: clamp(this.state.leftPercent - 10, 30, 70)});
+  onRightClick = () => this.setState({leftPercent: clamp(this.state.leftPercent - 10, 20, 80)});
 
   submitRoll = (red, yellow, special) => {
     const { rolls, reds, specials } = this.state;
@@ -101,7 +103,20 @@ class App extends Component {
     return (
       <StyledApp>
         <StyledHeader>
-          <StyledTitle>Histogramo</StyledTitle>
+          <Button
+            icon={<FillSix color={colors.appBlack} size="100%" />}
+            onClick={this.onLeftClick}
+            size="10%"
+            maxSize="5rem"
+            disabled={this.state.leftPercent > 70}
+            />
+          <Button
+            icon={<Graph color={colors.appBlack} size="100%" />}
+            onClick={this.onRightClick}
+            size="10%"
+            maxSize="5rem"
+            disabled={this.state.leftPercent < 30}
+            />
           <a href="https://github.com/danielbank/histogramo">
             <StyledGitHubRibbon
               src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
@@ -111,7 +126,6 @@ class App extends Component {
         </StyledHeader>
         <StyledBody>
           <StyledLeftContent
-            onClick={this.onLeftClick}
             percentWidth={this.state.leftPercent}
             >
             <Form
@@ -121,7 +135,6 @@ class App extends Component {
               />
           </StyledLeftContent>
           <StyledRightContent
-            onClick={this.onRightClick}
             percentWidth={100 - this.state.leftPercent}
             >
             <Histogram data={this.getRollData()} />

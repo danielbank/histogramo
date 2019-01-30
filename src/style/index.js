@@ -4,7 +4,6 @@ import {
   StyledApp,
   StyledHeader,
   StyledBody,
-  StyledTitle,
   StyledGitHubRibbon,
   StyledLeftContent,
   StyledRightContent
@@ -26,7 +25,6 @@ export {
   StyledApp,
   StyledHeader,
   StyledBody,
-  StyledTitle,
   StyledGitHubRibbon,
   StyledLeftContent,
   StyledRightContent,
