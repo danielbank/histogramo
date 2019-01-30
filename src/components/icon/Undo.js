@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Icon from './Icon';
 
-class City extends Component {
+class Undo extends Component {
   render() {
     return (
       <Icon
@@ -22,4 +22,4 @@ class City extends Component {
   }
 }
 
-export default City;
+export default Undo;
