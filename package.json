@@ -1,7 +1,7 @@
 {
   "name": "histogramo",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://www.histogramo.com",
   "devDependencies": {
     "react-scripts": "2.1.2"
