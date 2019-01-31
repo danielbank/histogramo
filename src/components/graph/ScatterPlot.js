@@ -84,12 +84,15 @@ class ScatterPlot extends Component {
   }
 
   render() {
-    const { data } = this.props;
-    return (
-      <ReactEcharts
+    const { data, isShown } = this.props;
+    if (isShown) {
+      return (
+        <ReactEcharts
         option={this.getOption(data)}
         />
-    );
+      );
+    }
+    return null;
   }
 }
 
