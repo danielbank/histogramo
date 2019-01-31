@@ -12,16 +12,28 @@ class Button extends Component {
     disabled: PropTypes.bool,
   };
 
+  constructor(props) {
+    super(props);
+    this.buttonRef = React.createRef();
+    const ogOnClick = props.onClick || (() => {});
+    const onClick = (e) => {
+      ogOnClick(e);
+      this.buttonRef.current.blur()
+    }
+    this.onClick = onClick.bind(this);
+  }
+
   render() {
-    const { icon, onClick, size, maxSize, active, disabled } = this.props;
+    const { icon, size, maxSize, active, disabled } = this.props;
     return (
       <StyledButton
         type="button"
+        ref={this.buttonRef}
         size={size}
         maxSize={maxSize}
         active={active}
         disabled={disabled}
-        onClick={(e) => onClick ? onClick(e) : null}
+        onClick={this.onClick}
         >
         {icon}
       </StyledButton>
