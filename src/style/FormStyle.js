@@ -7,7 +7,7 @@ export const StyledForm = styled.div`
 `;
 
 export const StyledRow = styled.div`
-  display: flex;
+  display: ${props => props.hidden ? 'none' : 'flex'}
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;

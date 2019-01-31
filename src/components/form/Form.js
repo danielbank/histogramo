@@ -32,7 +32,8 @@ class Form extends Component {
   setSpecial = value => this.setState({ special: value });
 
   submitRoll = () => {
-    this.props.submitRoll(this.state.red, this.state.yellow, this.state.special);
+    const specialValue = this.props.hasSpecials ? this.state.special : 'black';
+    this.props.submitRoll(this.state.red, this.state.yellow, specialValue);
     this.setState(initialState);
   }
 
@@ -85,9 +86,9 @@ class Form extends Component {
   }
 
   render() {
-    const { undoable } = this.props;
+    const { undoable, hasSpecials } = this.props;
     const { red, yellow, special } = this.state;
-    const submittable = red && yellow && special;
+    const submittable = red && yellow && (!hasSpecials || special);
     const redDice = this.getDie('red');
     const yellowDice = this.getDie('yellow');
     const specialDice = this.getSpecial();
@@ -182,7 +183,7 @@ class Form extends Component {
             maxSize="5rem"
             />
         </StyledRow>
-        <StyledRow>
+        <StyledRow hidden={!hasSpecials}>
           <Button
             icon={<FillRect color={colors.scientificGreen} size="100%" />}
             onClick={() => this.setSpecial('green')}

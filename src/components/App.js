@@ -6,6 +6,8 @@ import ScatterPlot from './graph/ScatterPlot.js';
 import Button from './form/Button.js';
 import Graph from './icon/Graph.js';
 import FillSix from './icon/FillSix.js';
+import Town from './icon/Town.js';
+import City from './icon/City.js';
 import {
   colors,
   StyledApp,
@@ -22,11 +24,14 @@ class App extends Component {
     rolls: [],
     reds: [],
     specials: [],
+    regularCatan: false
   };
 
-  onLeftClick = () => this.setState({leftPercent: clamp(this.state.leftPercent + 10, 80)});
+  expandLeftPanel = () => this.setState({leftPercent: clamp(this.state.leftPercent + 10, 80)});
 
-  onRightClick = () => this.setState({leftPercent: clamp(this.state.leftPercent - 10, 20, 80)});
+  expandRightPanel = () => this.setState({leftPercent: clamp(this.state.leftPercent - 10, 20, 80)});
+
+  toggleRegularCatan = () => this.setState({ regularCatan: !this.state.regularCatan })
 
   submitRoll = (red, yellow, special) => {
     const { rolls, reds, specials } = this.state;
@@ -100,22 +105,31 @@ class App extends Component {
   };
 
   render() {
+    const catanIcon = this.state.regularCatan ?
+      <City color={colors.appBlack} size="100%" /> :
+      <Town color={colors.appBlack} size="100%" />;
     return (
       <StyledApp>
         <StyledHeader>
           <Button
             icon={<FillSix color={colors.appBlack} size="100%" />}
-            onClick={this.onLeftClick}
+            onClick={this.expandLeftPanel}
             size="10%"
             maxSize="5rem"
             disabled={this.state.leftPercent > 70}
             />
           <Button
             icon={<Graph color={colors.appBlack} size="100%" />}
-            onClick={this.onRightClick}
+            onClick={this.expandRightPanel}
             size="10%"
             maxSize="5rem"
             disabled={this.state.leftPercent < 30}
+            />
+          <Button
+            icon={catanIcon}
+            onClick={this.toggleRegularCatan}
+            size="10%"
+            maxSize="5rem"
             />
         </StyledHeader>
         <StyledBody>
@@ -126,13 +140,16 @@ class App extends Component {
               submitRoll={this.submitRoll}
               undoLastSubmit={this.undoLastSubmit}
               undoable={this.state.rolls.length}
+              hasSpecials={!this.state.regularCatan}
               />
           </StyledLeftContent>
           <StyledRightContent
             percentWidth={100 - this.state.leftPercent}
             >
             <Histogram data={this.getRollData()} />
-            <ScatterPlot data={this.getSpecialData()} />
+            <ScatterPlot
+              data={this.getSpecialData()}
+              isShown={!this.state.regularCatan} />
           </StyledRightContent>
         </StyledBody>
         <StyledFooter>
