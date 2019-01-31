@@ -31,4 +31,5 @@ export const StyledRightContent = styled.div`
 `;
 
 export const StyledFooter = styled.div`
+  margin-top: 2.5rem;
 `;
