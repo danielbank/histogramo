@@ -68,6 +68,7 @@ class Form extends Component {
   }
 
   getSpecial = () => {
+    if (!this.props.hasSpecials) return null;
     switch (this.state.special) {
       case 'green': {
         return (<FillRect color={colors.scientificGreen} size="33%" />);
