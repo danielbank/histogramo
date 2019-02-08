@@ -3,6 +3,10 @@ import { colors } from './Colors';
 
 export const StyledApp = styled.div`
   text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 export const StyledHeader = styled.header`
@@ -31,5 +35,13 @@ export const StyledRightContent = styled.div`
 `;
 
 export const StyledFooter = styled.div`
+  display: flex;
   margin-top: 2.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  justify-content: space-between
+`;
+
+export const StyledLink = styled.a`
+  font-size: smaller;
 `;

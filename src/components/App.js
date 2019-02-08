@@ -15,7 +15,8 @@ import {
   StyledBody,
   StyledLeftContent,
   StyledRightContent,
-  StyledFooter
+  StyledFooter,
+  StyledLink
 } from '../style';
 
 class App extends Component {
@@ -153,7 +154,12 @@ class App extends Component {
           </StyledRightContent>
         </StyledBody>
         <StyledFooter>
-          <a href="https://github.com/danielbank/histogramo">GitHub</a>
+          <StyledLink href="https://github.com/danielbank/histogramo">Code by Daniel Bank</StyledLink>
+          <StyledLink href="https://thenounproject.com/shalfdesign/collection/seo-internet-marketing">Dice Logo by Arafat Uddin</StyledLink>
+          <StyledLink href="https://thenounproject.com/danielaeapaim/collection/gambling">Gambling Icons by Daniela Paim</StyledLink>
+          <StyledLink href="https://thenounproject.com/rshashank19/collection/direction">Arrow Icons by Shashank Singh</StyledLink>
+          <StyledLink href="https://thenounproject.com/smashicons/collection/smashicons-medieval-md-solid">Castle Icons by Ben Davis</StyledLink>
+          <StyledLink href="https://thenounproject.com/xicons.co/collection/essential-solid-icons">Graph Icon by Xicons.co</StyledLink>
         </StyledFooter>
       </StyledApp>
     );

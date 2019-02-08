@@ -6,7 +6,8 @@ import {
   StyledBody,
   StyledLeftContent,
   StyledRightContent,
-  StyledFooter
+  StyledFooter,
+  StyledLink
 } from './AppStyle';
 
 import {
@@ -28,6 +29,7 @@ export {
   StyledLeftContent,
   StyledRightContent,
   StyledFooter,
+  StyledLink,
   StyledForm,
   StyledRow,
   StyledSubmitRow,
