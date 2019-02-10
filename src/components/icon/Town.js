@@ -8,7 +8,7 @@ class FillOne extends Component {
         {...this.props}
         x="0px"
         y="0px"
-        viewBox="0 0 24 30"
+        viewBox="0 0 24 24"
         fill="#222"
         >
         <path

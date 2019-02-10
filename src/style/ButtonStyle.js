@@ -5,6 +5,7 @@ export const StyledButton = styled.button`
   opacity: 1;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   height: ${props => props.size};
   width: ${props => props.size};
   max-height: ${props => props.maxSize}
@@ -15,6 +16,7 @@ export const StyledButton = styled.button`
   line-height: 0.88rem;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   border-radius: 8px;
+  padding: 4px;
   border: 3px solid ${props => props.active ? '#C23631' : '#222'};
   background-color: ${props => props.active ? '#C09AA1' : '#fcfcfc'};
   color: #222;
